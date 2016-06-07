@@ -1,5 +1,4 @@
 //====Backend======
-var num =[];
 function inputGood (numEnd, numCount) {
   if (numCount <= 0 || numEnd <= 0) {
     alert('That\'s not a positive number');
@@ -15,14 +14,16 @@ function inputGood (numEnd, numCount) {
 function countBy (numEnd, numCount) {
   for (var i = numCount; i <= numEnd; i += numCount) {
       alert(i);
-      $('ul').append('<li>' + i + '</li>');
+      $('ul#results').append('<li>' + i + '</li>');
     }
 };
 //====Frontend=====
 $(function() {
   $('form#painInTheAss').submit(function(event) {
+    var numEndFinal = $('#numEnd').val();
+    var numCountFinal = $('#numCount').val();
+    inputGood (numEndFinal, numCountFinal);
     event.preventDefault();
-    
   });
 });
 
