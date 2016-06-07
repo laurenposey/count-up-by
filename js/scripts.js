@@ -13,23 +13,22 @@ function inputGood (numEnd, numCount) {
 
 function countBy (numEnd, numCount) {
   for (var i = numCount; i <= numEnd; i += numCount) {
-      alert(i);
+      //alert(i);
       $('ul#results').append('<li>' + i + '</li>');
     }
 };
 //====Frontend=====
 $(function() {
   $('form#painInTheAss').submit(function(event) {
-    var numEndFinal = $('#numEnd').val();
-    var numCountFinal = $('#numCount').val();
-    inputGood (numEndFinal, numCountFinal);
     event.preventDefault();
+    var numEndFinal = parseInt($('#numEnd').val());
+    var numCountFinal = parseInt($('#numCount').val());
+    inputGood (numEndFinal, numCountFinal);
   });
 });
 
 
-//inputGood (); //should alert 'That's not a number'
-//inputGood ('hello', 9) //should alert 'That's not a number'
-inputGood (23, -2); //should alert 'That's not a positive number'
+
+//inputGood (23, -2); //should alert 'That's not a positive number'
 //inputGood (23, 70); //should alert 'Count by number is larger than the count to number'
 //inputGood (30, 5);
